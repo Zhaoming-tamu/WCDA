@@ -41,6 +41,7 @@
         </button>
         <div class="nav-links" id="site-nav-links">
           <a href="#abstract">Abstract</a>
+          <a href="#videos">Videos</a>
           <a href="#pipeline">Pipeline</a>
           <a href="#comparison">Comparison</a>
           <a href="#results">Results</a>
@@ -210,32 +211,106 @@
         </div>
       </section>
 
-      <section class="section video-section" aria-labelledby="video-heading">
-        <div class="media-width">
-          <h2 class="sr-only" id="video-heading">Video</h2>
-          <div class="video-shell">
-            <video
-              id="project-video"
-              autoplay
-              muted
-              loop
-              controls
-              playsinline
-              preload="metadata"
-              poster="assets/video/video-poster.webp"
-              aria-label="DA-W frame-by-frame depth estimation showcase"
-            >
-              <source type="video/mp4" />
-              Your browser does not support HTML video.
-            </video>
-            <div class="video-placeholder" role="status">
-              <span>Video coming soon</span>
-              <small>Input · DA V2 · DA-W — Snow → Fog → Low-light → Rain</small>
-            </div>
+      <section class="section video-section" id="videos" aria-labelledby="video-heading">
+        <div class="page-width">
+          <div class="section-heading">
+            <h2 id="video-heading">Depth Visualization on Videos</h2>
+            <p>
+              <strong>Note:</strong> DA-W is an image-based depth estimation method. These videos
+              present frame-by-frame predictions for visualization and do not claim temporal
+              consistency.
+            </p>
           </div>
-          <p class="media-note">
-            DA-W is an image-based method. This video presents frame-by-frame inference results
-            and does not claim temporal consistency.
+
+          <div class="weather-video-list">
+            <figure class="weather-video-item">
+              <figcaption class="weather-video-caption">Snow</figcaption>
+              <div class="weather-video-shell">
+                <video
+                  autoplay
+                  muted
+                  loop
+                  controls
+                  playsinline
+                  preload="metadata"
+                  poster="assets/video/snow-poster.jpg"
+                  data-showcase-video
+                  aria-label="Snow video comparison: input, Depth Anything V2, and DA-W"
+                >
+                  <source src="assets/video/snow.mp4" type="video/mp4" />
+                  Your browser does not support HTML video.
+                </video>
+              </div>
+            </figure>
+
+            <figure class="weather-video-item">
+              <figcaption class="weather-video-caption">Fog</figcaption>
+              <div class="weather-video-shell">
+                <video
+                  autoplay
+                  muted
+                  loop
+                  controls
+                  playsinline
+                  preload="metadata"
+                  poster="assets/video/fog-poster.jpg"
+                  data-showcase-video
+                  aria-label="Fog video comparison: input, Depth Anything V2, and DA-W"
+                >
+                  <source src="assets/video/fog.mp4" type="video/mp4" />
+                  Your browser does not support HTML video.
+                </video>
+              </div>
+            </figure>
+
+            <figure class="weather-video-item">
+              <figcaption class="weather-video-caption">Low-light</figcaption>
+              <div class="weather-video-shell">
+                <video
+                  autoplay
+                  muted
+                  loop
+                  controls
+                  playsinline
+                  preload="metadata"
+                  poster="assets/video/low-light-poster.jpg"
+                  data-showcase-video
+                  aria-label="Low-light video comparison: input, Depth Anything V2, and DA-W"
+                >
+                  <source src="assets/video/low-light.mp4" type="video/mp4" />
+                  Your browser does not support HTML video.
+                </video>
+              </div>
+            </figure>
+
+            <figure class="weather-video-item">
+              <figcaption class="weather-video-caption">Rain</figcaption>
+              <div class="weather-video-shell">
+                <video
+                  autoplay
+                  muted
+                  loop
+                  controls
+                  playsinline
+                  preload="metadata"
+                  poster="assets/video/rain-poster.jpg"
+                  data-showcase-video
+                  aria-label="Rain video comparison: input, Depth Anything V2, and DA-W"
+                >
+                  <source src="assets/video/rain.mp4" type="video/mp4" />
+                  Your browser does not support HTML video.
+                </video>
+              </div>
+            </figure>
+          </div>
+
+          <p class="video-attribution">
+            Source footage: Snow and Rain by
+            <a href="https://www.pexels.com/@driver2/" target="_blank" rel="noopener noreferrer">Kim Dodge</a>,
+            Fog by
+            <a href="https://www.pexels.com/@talha-uguz-2156923509/" target="_blank" rel="noopener noreferrer">Talha Uğuz</a>
+            via Pexels; Low-light from
+            <a href="https://www.boreas.utias.utoronto.ca/" target="_blank" rel="noopener noreferrer">Boreas</a>.
           </p>
         </div>
       </section>

@@ -1,8 +1,10 @@
 # DA-W project-page asset manifest
 
-These files were prepared from the local Camera-ready source and the verified
-`recoverable_20` inference run. Original files were not modified. No new model
-inference was performed during this export.
+The static figures were prepared from the local Camera-ready source and the
+verified `recoverable_20` inference run. The video directory additionally holds
+four reviewed inference clips selected for the public project page. Original
+source videos, raw prediction caches, and review-only candidates are not copied
+into this deployment directory.
 
 ## Directory map
 
@@ -32,8 +34,11 @@ assets/
 │   ├── kitti-c.{png,webp}
 │   └── clean-benchmarks.{png,webp}
 └── video/
-    ├── video-poster.png
-    └── video-poster.webp
+    ├── snow.mp4 / snow-poster.jpg
+    ├── fog.mp4 / fog-poster.jpg
+    ├── low-light.mp4 / low-light-poster.jpg
+    ├── rain.mp4 / rain-poster.jpg
+    └── video-poster.{png,webp}  # retained legacy placeholder
 ```
 
 The sliders and tables use WebP for normal delivery. The live teaser intentionally
@@ -159,13 +164,34 @@ Reproduction helpers are stored in
 `../../tools/real-adverse-weather-no-citations.patch` and
 `../../tools/export_real_adverse_weather_clean.py`.
 
-## Video poster
+## Video comparisons
 
-- Output: `video/video-poster.png` and `.webp`, **1920 × 1080 px**
-- Content: a neutral `Input | DA v2 | DA-W` layout assembled from the fresh
-  `teaser_night_4_img` shared-scale assets.
-- Status: temporary poster/fallback only. It is not the final project video and
-  makes no temporal-consistency claim.
+The live page uses four reviewed `Input | DA V2 | DA-W` videos. Every deployable
+MP4 and poster is **1920 × 360 px**, uses the same three equal-width columns,
+and is presented without web-side cropping or stretching.
+
+| Page label | Video | Selected source | Duration |
+| --- | --- | --- | ---: |
+| Snow | `video/snow.mp4` | Pexels snowstorm highway, reviewed 17.5–21.5 s window | 4 s |
+| Fog | `video/fog.mp4` | Pexels foggy highway, screening-v2 23.5–27.5 s window | 4 s |
+| Low-light | `video/low-light.mp4` | Boreas dynamic candidate 01, frames 2851–3090 | 8 s |
+| Rain | `video/rain.mp4` | Expanded Pexels search, highway-truck 27–31 s window | 4 s |
+
+The Low-light video was center-cropped vertically from the reviewed 1920 × 600
+Boreas composite to remove its white title bar and match the other videos. It
+was not horizontally cropped, so all three 640 px columns remain intact. Panel
+labels were added after the crop. The other three MP4 files retain their
+reviewed 1920 × 360 composites. All four use H.264 and `yuv420p` for browser
+compatibility, and each JPEG poster is taken from the corresponding deployed
+video.
+
+The clips show independent per-frame image inference and do not establish
+temporal consistency. Relative-depth colors are visualizations rather than a
+shared absolute metric scale across models or time. Source credits and the
+method caveat are displayed in the live video section.
+
+The older `video/video-poster.png` and `.webp` files are retained for provenance
+but are no longer loaded by the page.
 
 ## Publication checks before GitHub Pages deployment
 
@@ -178,4 +204,5 @@ Reproduction helpers are stored in
    those sliders.
 3. Verify the table exports against the official proceedings PDF when it is
    released.
-4. Replace the temporary video poster when the final H.264 MP4 is ready.
+4. Keep all four deployed videos at identical dimensions and browser-compatible
+   H.264/`yuv420p` encoding when clips are replaced.

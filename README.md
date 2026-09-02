@@ -53,24 +53,27 @@ assets/
 ├── results/
 │   └── real-adverse-weather-clean.webp
 └── video/
-    ├── daw-showcase.mp4
-    └── video-poster.webp
+    ├── snow.mp4 / snow-poster.jpg
+    ├── fog.mp4 / fog-poster.jpg
+    ├── low-light.mp4 / low-light-poster.jpg
+    └── rain.mp4 / rain-poster.jpg
 ```
 
 For every slider, export the aligned images at exactly the same pixel dimensions and with a
 shared depth-color scale. WebP is used for photographs and depth maps. Retain a high-resolution
 source outside this deployment directory.
 
-The intended video is a 16:9 H.264 MP4 with the fixed three-column layout
-`Input | DA V2 | DA-W`, ordered Snow → Fog → Low-light → Rain. The markup already uses
-`autoplay`, `muted`, `loop`, `controls`, and `playsinline`. Until the final MP4 is added and
-configured, the page displays the generated poster as a graceful placeholder.
+The video section follows Depth Anything's wide, single-column presentation and contains four
+reviewed H.264 MP4 files in the fixed three-column layout `Input | DA V2 | DA-W`: Snow, Fog,
+Low-light, and Rain. All deployable videos and posters are exactly **1920 × 360 px**, so the
+four rows align without stretching, cropping, or black letterboxing. The markup uses `autoplay`,
+`muted`, `loop`, `controls`, and `playsinline`; reduced-motion preferences disable autoplay.
 
-After adding `assets/video/daw-showcase.mp4`, set `VIDEO_SOURCE` near the top of `script.js`:
-
-```js
-const VIDEO_SOURCE = "assets/video/daw-showcase.mp4";
-```
+These are frame-by-frame image-model predictions, not a temporal-consistency result. Relative
+depth colors are for visualization and must not be interpreted as a shared absolute metric scale
+across models or frames. The Snow and Fog footage uses the reviewed Pexels clips, Low-light uses
+the dynamic Boreas segment, and Rain uses the expanded-search highway clip. Source attribution is
+shown directly beneath the videos.
 
 The live page shows one result table: the real adverse-weather benchmark. It was rebuilt from a
 temporary copy of the Camera-ready LaTeX after removing only bibliography markers from method

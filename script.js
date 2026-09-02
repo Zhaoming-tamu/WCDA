@@ -11,9 +11,6 @@ const RESOURCE_LINKS = {
   data: null,
 };
 
-// Set this after the final H.264 showcase has been added to assets/video/.
-const VIDEO_SOURCE = null;
-
 const WEATHER_CONDITIONS = [
   { id: "snow", label: "Snow" },
   { id: "fog", label: "Fog" },
@@ -441,32 +438,21 @@ function setupResources() {
   });
 }
 
-function setupVideo() {
-  const video = document.getElementById("project-video");
-  if (!video) return;
-  const shell = video.closest(".video-shell");
-  const source = video.querySelector("source");
+function setupVideos() {
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  const markReady = () => shell?.classList.add("is-ready");
-  const markMissing = () => shell?.classList.remove("is-ready");
+  document.querySelectorAll("[data-showcase-video]").forEach((video) => {
+    const shell = video.closest(".weather-video-shell");
+    const markUnavailable = () => shell?.classList.add("is-unavailable");
 
-  video.addEventListener("loadeddata", markReady);
-  video.addEventListener("error", markMissing);
-  source?.addEventListener("error", markMissing);
+    video.addEventListener("error", markUnavailable);
+    video.querySelector("source")?.addEventListener("error", markUnavailable);
 
-  if (source && typeof VIDEO_SOURCE === "string" && VIDEO_SOURCE.trim()) {
-    source.src = VIDEO_SOURCE.trim();
-    video.load();
-  } else {
-    markMissing();
-  }
-
-  if (video.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) markReady();
-
-  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    video.autoplay = false;
-    video.pause();
-  }
+    if (reduceMotion) {
+      video.autoplay = false;
+      video.pause();
+    }
+  });
 }
 
 function setupNavigation() {
@@ -536,7 +522,7 @@ function init() {
   document.querySelectorAll(".comparison-stage").forEach(setupComparison);
   setupImageFallbacks();
   setupResources();
-  setupVideo();
+  setupVideos();
   setupNavigation();
   setupCitationCopy();
 }
