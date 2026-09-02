@@ -1,0 +1,47 @@
+--- main.tex
++++ main.tex
+@@ -435,31 +435,31 @@
+     \cmidrule(lr){11-12}
+     & & AbsRel$\downarrow$ & $\delta_1\uparrow$ & AbsRel$\downarrow$ & $\delta_1\uparrow$ & AbsRel$\downarrow$ & $\delta_1\uparrow$ & AbsRel$\downarrow$ & $\delta_1\uparrow$ & AbsRel$\downarrow$ & $\delta_1\uparrow$ \\
+     \midrule
+-    DynaDepth~\cite{zhang2022towards} & ResNet
++    DynaDepth & ResNet
+       & 0.381 & 0.394 & 0.512 & 0.294 & 0.239 & 0.606 & 0.172 & 0.608 & 0.144 & \topA{{0.901}} \\
+-    EC-Depth~\cite{song2023ec} & ViT-S
++    EC-Depth & ViT-S
+       & 0.243 & 0.623 & \topC{0.228} & \topC{0.552} & 0.155 & 0.766 & 0.158 & 0.767 & 0.109 & 0.861 \\
+-    STEPS~\cite{zheng2023steps} & ResNet
++    STEPS & ResNet
+       & 0.252 & 0.588 & 0.350 & 0.367 & 0.301 & 0.480 & 0.252 & 0.588 & 0.216 & 0.641 \\
+-    robustdepth~\cite{saunders2023self} & ViT-S
++    robustdepth & ViT-S
+       & 0.260 & 0.597 & 0.311 & 0.521 & 0.167 & 0.755 & 0.168 & 0.775 & 0.105 & 0.882 \\
+-    weather-depth~\cite{wang2024weatherdepth} & ViT-S
++    weather-depth & ViT-S
+       & -- & -- & -- & -- & 0.158 & 0.764 & 0.160 & 0.767 & 0.105 & 0.879 \\
+-    Syn2Real~\cite{yan2025synthetic} & ViT-S
++    Syn2Real & ViT-S
+       & -- & -- & -- & -- & 0.171 & 0.729 & -- & -- & 0.128 & 0.845 \\
+-    DepthPro~\cite{bochkovskii2024depth} & ViT-S
++    DepthPro & ViT-S
+       & 0.218 & 0.669 & 0.237 & 0.534 & \topB{{0.124}} & \topB{{0.841}} & 0.158 & 0.779 & \topC{{0.102}} & \topC{0.892} \\
+-    DepthAnything v1~\cite{depthanything} & ViT-S
++    DepthAnything v1 & ViT-S
+       & 0.232 & 0.679 & 0.239 & 0.518 & 0.133 & 0.819 & \topB{0.150} & \topA{{0.801}} & \topA{{0.098}} & 0.891 \\
+-    DepthAnything v2~\cite{yang2024depth} & ViT-S
++    DepthAnything v2 & ViT-S
+       & \topC{0.200} & \topC{0.725} & 0.239 & 0.518 & \topC{0.125} & \topC{0.840} & \topC{0.151} & \topB{0.798} & {0.103} & 0.890 \\
+-    DepthAnything v3~\cite{depthanything3} & ViT-S
++    DepthAnything v3 & ViT-S
+       & 0.275 & 0.586 & \topA{0.169} & \topA{0.755} & 0.134 & 0.822 & 0.154 & 0.785 & 0.105 & 0.887 \\
+-    DepthAnything-AC~\cite{sun2025depth} & ViT-S
++    DepthAnything-AC & ViT-S
+       & \topB{{0.198}} & \topB{{0.727}} & \topB{0.227} & \topB{0.555} & \topC{0.125} & \topC{0.840} & \topA{{0.149}} & \topA{{0.801}} & {0.103} & 0.889 \\
+-    MWFormer~\cite{10767188}+DA v2~\cite{yang2024depth} & ViT-S
++    MWFormer + DA v2 & ViT-S
+       & -- & -- & -- & -- & 0.127 & 0.833 & \topC{0.151} & \topC{0.795} & 0.104 & 0.884 \\
+-    DarkIR~\cite{Feijoo_2025_CVPR}+DA v2~\cite{yang2024depth} & ViT-S
++    DarkIR + DA v2 & ViT-S
+       & 0.204 & 0.710 & {0.232} & {0.542} & -- & -- & -- & -- & -- & -- \\
+     \midrule
+     \textbf{DepthAnything-W} & ViT-S
