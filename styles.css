@@ -880,7 +880,7 @@ a:focus-visible {
 /* Pipeline */
 
 .pipeline-section .wide-width {
-  max-width: 768px;
+  max-width: 1100px;
 }
 
 .clean-figure .pipeline-caption {
