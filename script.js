@@ -6,7 +6,7 @@
  */
 const RESOURCE_LINKS = {
   paper: null,
-  code: null,
+  code: "https://github.com/taco-group/DA-W",
   model: "https://huggingface.co/qgfvadfuvads/DA-W",
   data: null,
 };
