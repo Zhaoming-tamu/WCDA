@@ -7,7 +7,7 @@
 const RESOURCE_LINKS = {
   paper: null,
   code: null,
-  model: null,
+  model: "https://huggingface.co/qgfvadfuvads/DA-W",
   data: null,
 };
 
