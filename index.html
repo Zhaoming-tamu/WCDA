@@ -52,8 +52,10 @@
 
     <header class="hero" id="home">
       <div class="hero-inner page-width">
-        <h1>Weather-Conditioned Depth Anything</h1>
-        <p class="venue">European Conference on Computer Vision (ECCV) 2026</p>
+        <h1 aria-label="Weather-Conditioned Depth Anything">
+          <span class="title-weather">Weather-Conditioned</span>
+          <span class="title-depth">Depth Anything</span>
+        </h1>
 
         <div class="authors" aria-label="Authors">
           <span class="author-block">Zhaoming Xu</span>
@@ -62,10 +64,14 @@
           <span class="author-block">Zihao Zhu</span>
           <span class="author-block">Renjie Li</span>
           <span class="author-block">Yang Zhou</span>
-          <span class="author-block">Zhengzhong Tu<sup>†</sup></span>
+          <span class="author-block">Zhengzhong Tu<sup>*</sup></span>
         </div>
-        <p class="affiliation">Texas A&amp;M University, College Station, TX 77843, USA</p>
-        <p class="author-note"><sup>†</sup> Corresponding author</p>
+        <p class="affiliation-line">
+          <span class="affiliation">Texas A&amp;M University, College Station, TX 77843, USA</span>
+          <span class="affiliation-separator" aria-hidden="true">·</span>
+          <span class="author-note"><sup>*</sup>Corresponding Author</span>
+        </p>
+        <p class="venue">European Conference on Computer Vision (ECCV) 2026</p>
 
         <div class="resource-links" aria-label="Project resources">
           <a
