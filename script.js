@@ -5,7 +5,7 @@
  * Keeping this map here prevents placeholder buttons from pointing to invented links.
  */
 const RESOURCE_LINKS = {
-  paper: null,
+  paper: "https://arxiv.org/pdf/2609.04827",
   code: "https://github.com/taco-group/DA-W",
   model: "https://huggingface.co/qgfvadfuvads/DA-W",
   data: null,
